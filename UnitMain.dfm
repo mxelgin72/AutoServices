@@ -22,7 +22,6 @@ object FormMain: TFormMain
     Height = 572
     Align = alClient
     TabOrder = 0
-    ExplicitHeight = 552
     object Splitter1: TSplitter
       Left = 186
       Top = 1
@@ -38,7 +37,6 @@ object FormMain: TFormMain
       Height = 40
       Align = alBottom
       TabOrder = 0
-      ExplicitTop = 511
       object btnAdd: TBitBtn
         Left = 198
         Top = 6
@@ -75,7 +73,6 @@ object FormMain: TFormMain
       Height = 530
       Align = alLeft
       TabOrder = 1
-      ExplicitHeight = 510
       object GroupBox1: TGroupBox
         Left = 7
         Top = 1
@@ -88,7 +85,7 @@ object FormMain: TFormMain
           Top = 20
           Width = 162
           Height = 153
-          Date = 40354.768241099540000000
+          Date = 40354.811260844910000000
           TabOrder = 0
           OnClick = MonthCalendar1Click
         end
@@ -149,7 +146,6 @@ object FormMain: TFormMain
       Height = 530
       Align = alClient
       TabOrder = 2
-      ExplicitHeight = 510
       object LabelDate: TLabel
         Left = 1
         Top = 1
@@ -247,7 +243,6 @@ object FormMain: TFormMain
         SearchFooter.HintHighlight = 'Highlight occurences'
         SearchFooter.MatchCaseCaption = 'Match case'
         Version = '5.0.2.0'
-        ExplicitHeight = 400
         RowHeights = (
           16
           16
@@ -340,8 +335,8 @@ object FormMain: TFormMain
     end
   end
   object PopupMenu1: TPopupMenu
-    Left = 304
-    Top = 328
+    Left = 224
+    Top = 240
     object N25: TMenuItem
       Caption = #1054#1073#1085#1086#1074#1080#1090#1100
     end
