@@ -1,0 +1,72 @@
+object FormRepairStatus: TFormRepairStatus
+  Left = 0
+  Top = 0
+  Caption = #1058#1080#1087#1099' '#1089#1086#1089#1090#1086#1103#1085#1080#1081' '#1088#1077#1084#1086#1085#1090#1072
+  ClientHeight = 359
+  ClientWidth = 439
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object SGMain: TStringGrid
+    Left = 0
+    Top = 0
+    Width = 439
+    Height = 320
+    Align = alClient
+    DefaultColWidth = 88
+    DefaultRowHeight = 16
+    FixedCols = 0
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing]
+    TabOrder = 0
+    ExplicitTop = 8
+    ExplicitWidth = 515
+    ExplicitHeight = 317
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 320
+    Width = 439
+    Height = 39
+    Align = alBottom
+    TabOrder = 1
+    object BitBtn2: TBitBtn
+      Left = 82
+      Top = 6
+      Width = 75
+      Height = 25
+      Caption = #1048#1079#1084#1077#1085#1080#1090#1100
+      TabOrder = 0
+    end
+    object BitBtn3: TBitBtn
+      Left = 159
+      Top = 6
+      Width = 75
+      Height = 25
+      Caption = #1059#1076#1072#1083#1080#1090#1100
+      TabOrder = 1
+    end
+    object BitBtn1: TBitBtn
+      Left = 5
+      Top = 6
+      Width = 75
+      Height = 25
+      Caption = #1044#1086#1073#1072#1074#1080#1090#1100
+      TabOrder = 2
+    end
+    object BitBtn4: TBitBtn
+      Left = 358
+      Top = 6
+      Width = 75
+      Height = 25
+      Caption = #1047#1072#1082#1088#1099#1090#1100
+      TabOrder = 3
+    end
+  end
+end

@@ -1,0 +1,36 @@
+unit UnitRepairStatus;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Grids, StdCtrls, Buttons, ExtCtrls;
+
+type
+  TFormRepairStatus = class(TForm)
+    SGMain: TStringGrid;
+    Panel1: TPanel;
+    BitBtn2: TBitBtn;
+    BitBtn3: TBitBtn;
+    BitBtn1: TBitBtn;
+    BitBtn4: TBitBtn;
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormRepairStatus: TFormRepairStatus;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFormRepairStatus.FormCreate(Sender: TObject);
+begin
+SGMain.Cells[1,1] := 'ghntnt';
+end;
+
+end.

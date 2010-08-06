@@ -1,0 +1,24 @@
+unit UnitRepairMapTOEdit;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs;
+
+type
+  TFormRepairMapTOEdit = class(TForm)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormRepairMapTOEdit: TFormRepairMapTOEdit;
+
+implementation
+
+{$R *.dfm}
+
+end.

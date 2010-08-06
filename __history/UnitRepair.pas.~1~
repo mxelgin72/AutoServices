@@ -1,0 +1,57 @@
+unit UnitRepair;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, Buttons;
+
+type
+  TFormRepair = class(TForm)
+    ComboBox1: TComboBox;
+    ComboBox2: TComboBox;
+    Label1: TLabel;
+    GroupBox1: TGroupBox;
+    GroupBox2: TGroupBox;
+    GroupBox3: TGroupBox;
+    BitBtn2: TBitBtn;
+    BitBtn3: TBitBtn;
+    Label2: TLabel;
+    ComboBox5: TComboBox;
+    Label3: TLabel;
+    Edit3: TEdit;
+    Label7: TLabel;
+    Label8: TLabel;
+    Edit4: TEdit;
+    Edit5: TEdit;
+    ComboBox6: TComboBox;
+    Edit1: TEdit;
+    Label6: TLabel;
+    Label5: TLabel;
+    ComboBox4: TComboBox;
+    Label4: TLabel;
+    Label10: TLabel;
+    ComboBox8: TComboBox;
+    Label11: TLabel;
+    Edit7: TEdit;
+    Edit8: TEdit;
+    Label12: TLabel;
+    ComboBox7: TComboBox;
+    RadioButton2: TRadioButton;
+    RadioButton1: TRadioButton;
+    ComboBox3: TComboBox;
+    ComboBox9: TComboBox;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormRepair: TFormRepair;
+
+implementation
+
+{$R *.dfm}
+
+end.

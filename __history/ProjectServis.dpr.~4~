@@ -1,0 +1,58 @@
+program ProjectServis;
+
+uses
+  Forms,
+  UnitMain in 'UnitMain.pas' {FormMain},
+  UnitRepair in 'UnitRepair.pas' {FormRepair},
+  UnitLogin in 'UnitLogin.pas' {FormLogin},
+  UnitRepairStatus in 'UnitRepairStatus.pas' {FormRepairStatus},
+  UnitRepairStatusEdit in 'UnitRepairStatusEdit.pas' {FormRepairStatusEdit},
+  UnitRepairMapTO in 'UnitRepairMapTO.pas' {FormRepairMapTO},
+  UnitRepairMapTOEdit in 'UnitRepairMapTOEdit.pas' {FormRepairMapTOEdit},
+  UnitSplash in 'UnitSplash.pas' {FormSplash};
+
+{$R *.res}
+var FormSplash :TFormSplash;
+
+i,j:integer;
+
+begin
+
+
+ FormSplash:=TFormSplash.Create(nil);
+
+  try
+      FormSplash.MakeSplash;
+      //******************************
+      FormSplash.Show;
+
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFormMain, FormMain);
+  Application.CreateForm(TFormRepair, FormRepair);
+  Application.CreateForm(TFormLogin, FormLogin);
+  Application.CreateForm(TFormRepairStatus, FormRepairStatus);
+  Application.CreateForm(TFormRepairStatusEdit, FormRepairStatusEdit);
+  Application.CreateForm(TFormRepairMapTO, FormRepairMapTO);
+  Application.CreateForm(TFormRepairMapTOEdit, FormRepairMapTOEdit);
+  for i := 1 to 100 do
+  begin
+    for j := 1 to 50000 do Application.ProcessMessages;
+     FormSplash.pb1.Progress := i;
+  end;
+
+      //******************************
+
+  repeat
+    Application.ProcessMessages;
+  until FormSplash.CloseQuery;
+  finally
+     FormSplash.Free;
+  end;
+
+//******************************
+  Application.Run;
+//******************************
+
+end.
+

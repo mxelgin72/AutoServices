@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2010.07.04 16:55:14.625.pas,D:\#WORK\RAD Studio\Projects\AutoServices\Unit1.pas=D:\#WORK\RAD Studio\Projects\AutoServices\UnitRepairStatusEdit.pas</Transaction>
+    <Transaction>2010.07.04 16:55:14.625.dfm,D:\#WORK\RAD Studio\Projects\AutoServices\Unit1.dfm=D:\#WORK\RAD Studio\Projects\AutoServices\UnitRepairStatusEdit.dfm</Transaction>
+    <Transaction>2010.07.04 17:55:38.468.pas,D:\#WORK\RAD Studio\Projects\AutoServices\Unit1.pas=D:\#WORK\RAD Studio\Projects\AutoServices\UnitRepairMapTO.pas</Transaction>
+    <Transaction>2010.07.04 17:55:38.468.dfm,D:\#WORK\RAD Studio\Projects\AutoServices\Unit1.dfm=D:\#WORK\RAD Studio\Projects\AutoServices\UnitRepairMapTO.dfm</Transaction>
+    <Transaction>2010.07.04 17:59:20.812.pas,D:\#WORK\RAD Studio\Projects\AutoServices\Unit1.pas=D:\#WORK\RAD Studio\Projects\AutoServices\UnitRepairMapTOEdit.pas</Transaction>
+    <Transaction>2010.07.04 17:59:20.812.dfm,D:\#WORK\RAD Studio\Projects\AutoServices\Unit1.dfm=D:\#WORK\RAD Studio\Projects\AutoServices\UnitRepairMapTOEdit.dfm</Transaction>
+  </Transactions>
+</BorlandProject>
