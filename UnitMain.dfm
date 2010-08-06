@@ -2,8 +2,8 @@ object FormMain: TFormMain
   Left = 0
   Top = 0
   Caption = #1055#1083#1072#1085#1080#1088#1086#1074#1072#1085#1080#1077' '#1079#1072#1085#1103#1090#1086#1089#1090#1080' '#1087#1086#1089#1090#1086#1074
-  ClientHeight = 572
-  ClientWidth = 800
+  ClientHeight = 502
+  ClientWidth = 904
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -12,31 +12,36 @@ object FormMain: TFormMain
   Font.Style = []
   Menu = MainMenu1
   OldCreateOrder = False
+  Position = poScreenCenter
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object pnPage: TPanel
     Left = 0
     Top = 0
-    Width = 800
-    Height = 572
+    Width = 904
+    Height = 502
     Align = alClient
     TabOrder = 0
+    ExplicitWidth = 800
+    ExplicitHeight = 572
     object Splitter1: TSplitter
       Left = 186
       Top = 1
-      Height = 530
+      Height = 460
       ExplicitLeft = 187
       ExplicitTop = 24
       ExplicitHeight = 505
     end
     object pnButtons: TPanel
       Left = 1
-      Top = 531
-      Width = 798
+      Top = 461
+      Width = 902
       Height = 40
       Align = alBottom
       TabOrder = 0
+      ExplicitTop = 531
+      ExplicitWidth = 798
       object btnAdd: TBitBtn
         Left = 198
         Top = 6
@@ -70,9 +75,10 @@ object FormMain: TFormMain
       Left = 1
       Top = 1
       Width = 185
-      Height = 530
+      Height = 460
       Align = alLeft
       TabOrder = 1
+      ExplicitHeight = 530
       object GroupBox1: TGroupBox
         Left = 7
         Top = 1
@@ -142,14 +148,16 @@ object FormMain: TFormMain
     object pnMain: TPanel
       Left = 189
       Top = 1
-      Width = 610
-      Height = 530
+      Width = 714
+      Height = 460
       Align = alClient
       TabOrder = 2
+      ExplicitWidth = 610
+      ExplicitHeight = 530
       object LabelDate: TLabel
         Left = 1
         Top = 1
-        Width = 608
+        Width = 712
         Height = 16
         Align = alTop
         Alignment = taCenter
@@ -165,8 +173,8 @@ object FormMain: TFormMain
       object SGRep: TAdvStringGrid
         Left = 1
         Top = 17
-        Width = 608
-        Height = 512
+        Width = 712
+        Height = 442
         Cursor = crDefault
         Align = alClient
         DefaultColWidth = 88
@@ -242,7 +250,10 @@ object FormMain: TFormMain
         SearchFooter.HintFindPrev = 'Find previous occurence'
         SearchFooter.HintHighlight = 'Highlight occurences'
         SearchFooter.MatchCaseCaption = 'Match case'
+        ShowDesignHelper = False
         Version = '5.0.2.0'
+        ExplicitWidth = 608
+        ExplicitHeight = 512
         RowHeights = (
           16
           16
@@ -357,15 +368,15 @@ object FormMain: TFormMain
   end
   object ADOConnection1: TADOConnection
     LoginPrompt = False
-    Left = 568
-    Top = 336
+    Left = 296
+    Top = 240
   end
   object ADOQuery1: TADOQuery
     Connection = ADOConnection1
     Parameters = <>
     SQL.Strings = (
       '')
-    Left = 616
-    Top = 336
+    Left = 328
+    Top = 240
   end
 end
