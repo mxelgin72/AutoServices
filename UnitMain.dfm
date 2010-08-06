@@ -352,8 +352,8 @@ object FormMain: TFormMain
   end
   object DataSource1: TDataSource
     DataSet = ADOQuery1
-    Left = 520
-    Top = 336
+    Left = 256
+    Top = 240
   end
   object ADOConnection1: TADOConnection
     LoginPrompt = False
