@@ -353,12 +353,15 @@ object FormMain: TFormMain
     end
     object N151: TMenuItem
       Caption = #1048#1085#1090#1077#1088#1074#1072#1083' 15 '#1084#1080#1085
+      OnClick = N151Click
     end
     object N301: TMenuItem
       Caption = #1048#1085#1090#1077#1088#1074#1072#1083' 30 '#1084#1080#1085
+      OnClick = N301Click
     end
     object N110: TMenuItem
       Caption = #1048#1085#1090#1077#1088#1074#1072#1083' 60 '#1084#1080#1085
+      OnClick = N110Click
     end
   end
   object DataSource1: TDataSource

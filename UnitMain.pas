@@ -68,8 +68,12 @@ type
     procedure nConnectClick(Sender: TObject);
     procedure nDisconnectClick(Sender: TObject);
     procedure SGRepRightClickCell(Sender: TObject; ARow, ACol: Integer);
+    procedure N151Click(Sender: TObject);
+    procedure N301Click(Sender: TObject);
+    procedure N110Click(Sender: TObject);
   private
     { Private declarations }
+    procedure InitGrid(beginTime, endTime, interval: TDateTime);
   public
     { Public declarations }
   end;
@@ -123,39 +127,48 @@ sgrep.Cols[5].Text := 'Электрик';
 sgrep.Cols[6].Text := 'Сход-развал 1';
 sgrep.Cols[7].Text := 'Сход-развал 2';
 
+InitGrid(StrToTime('8:00'), StrToTime('19:30'), StrToTime('00:30'));
 
-sgrep.Rows[1].Text := '8:00';
-sgrep.Rows[2].Text := '8:30';
-sgrep.Rows[3].Text := '9:00';
-sgrep.Rows[4].Text := '9:30';
-sgrep.Rows[5].Text := '10:00';
-sgrep.Rows[6].Text := '10:30';
-sgrep.Rows[7].Text := '11:00';
-sgrep.Rows[8].Text := '11:30';
-sgrep.Rows[9].Text := '12:00';
-sgrep.Rows[10].Text := '12:30';
-sgrep.Rows[11].Text := '13:00';
-sgrep.Rows[12].Text := '13:30';
-sgrep.Rows[13].Text := '14:00';
-sgrep.Rows[14].Text := '14:30';
-sgrep.Rows[15].Text := '15:00';
-sgrep.Rows[16].Text := '15:30';
-sgrep.Rows[17].Text := '16:00';
-sgrep.Rows[18].Text := '16:30';
-sgrep.Rows[19].Text := '17:00';
-sgrep.Rows[20].Text := '17:30';
-sgrep.Rows[21].Text := '18:00';
-sgrep.Rows[22].Text := '18:30';
-sgrep.Rows[23].Text := '19:00';
-sgrep.Rows[24].Text := '19:30';
 
 sgRep.MergeCells(3,3,2,2);
 sgRep.Cells[3,3] := 'Объединенная ячейка';
 end;
 
+procedure TFormMain.InitGrid(beginTime, endTime, interval: TDateTime);
+var
+  i : integer;
+begin
+  SGRep.ClearRows(1,  SGRep.RowCount);
+  SGRep.RowCount := trunc((endTime - beginTime)/interval) + 2;
+
+  for i := 1 to SgRep.RowCount  do
+  begin
+    SgRep.Rows[i].Text := //TimeToStr(beginTime);
+    copy(TimeToStr(beginTime),1, length(TimeToStr(beginTime)) - 3);
+
+    beginTime := beginTime + interval;
+  end;
+end;
+
+
 procedure TFormMain.MonthCalendar1Click(Sender: TObject);
 begin
-LabelDate.Caption := FormatDateTime('dd mmmm yyyy г.',MonthCalendar1.Date);
+  LabelDate.Caption := FormatDateTime('dd mmmm yyyy г.',MonthCalendar1.Date);
+end;
+
+procedure TFormMain.N151Click(Sender: TObject);
+begin
+  InitGrid(StrToTime('8:00'), StrToTime('19:30'), StrToTime('00:15'));
+end;
+
+procedure TFormMain.N301Click(Sender: TObject);
+begin
+  InitGrid(StrToTime('8:00'), StrToTime('19:30'), StrToTime('00:30'));
+end;
+
+procedure TFormMain.N110Click(Sender: TObject);
+begin
+  InitGrid(StrToTime('8:00'), StrToTime('19:30'), StrToTime('01:00'));
 end;
 
 procedure TFormMain.N27Click(Sender: TObject);
@@ -165,12 +178,12 @@ end;
 
 procedure TFormMain.N28Click(Sender: TObject);
 begin
-FormRepairMapTO.show;
+  FormRepairMapTO.show;
 end;
 
 procedure TFormMain.nConnectClick(Sender: TObject);
 begin
-FormLogin.ShowModal;
+  FormLogin.ShowModal;
 end;
 
 procedure TFormMain.nDisconnectClick(Sender: TObject);
@@ -183,19 +196,14 @@ nConnect.Enabled := true;
 
 end;
 
-
 procedure TFormMain.SGRepRightClickCell(Sender: TObject; ARow, ACol: Integer);
 begin
   if (Sender is TAdvStringGrid) then
-  begin
     With (Sender as TAdvStringGrid) do
     begin
       PopupMenu := nil;
-      if (ACol = 0 ) then
-        PopupMenu := Self.PopupMenu1;
+      if (ACol = 0 ) then PopupMenu := Self.PopupMenu1;
     end;
-  end;
-
 end;
 
 end.
