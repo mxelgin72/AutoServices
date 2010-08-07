@@ -122,8 +122,6 @@ sgrep.Cols[6].Text := 'Сход-развал 1';
 sgrep.Cols[7].Text := 'Сход-развал 2';
 
 
-
-
 sgrep.Rows[1].Text := '8:00';
 sgrep.Rows[2].Text := '8:30';
 sgrep.Rows[3].Text := '9:00';
@@ -149,6 +147,8 @@ sgrep.Rows[22].Text := '18:30';
 sgrep.Rows[23].Text := '19:00';
 sgrep.Rows[24].Text := '19:30';
 
+sgRep.MergeCells(3,3,2,2);
+sgRep.Cells[3,3] := 'Объединенная ячейка';
 end;
 
 procedure TFormMain.MonthCalendar1Click(Sender: TObject);
