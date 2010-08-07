@@ -58,6 +58,7 @@ type
     ADOConnection1: TADOConnection;
     ADOQuery1: TADOQuery;
     SGRep: TAdvStringGrid;
+    N151: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure btnAddClick(Sender: TObject);
     procedure btnChangeClick(Sender: TObject);
@@ -66,6 +67,7 @@ type
     procedure N28Click(Sender: TObject);
     procedure nConnectClick(Sender: TObject);
     procedure nDisconnectClick(Sender: TObject);
+    procedure SGRepRightClickCell(Sender: TObject; ARow, ACol: Integer);
   private
     { Private declarations }
   public
@@ -178,6 +180,21 @@ ADOConnection1.Close;
 
 nDisconnect.Enabled := false;
 nConnect.Enabled := true;
+
+end;
+
+
+procedure TFormMain.SGRepRightClickCell(Sender: TObject; ARow, ACol: Integer);
+begin
+  if (Sender is TAdvStringGrid) then
+  begin
+    With (Sender as TAdvStringGrid) do
+    begin
+      PopupMenu := nil;
+      if (ACol = 0 ) then
+        PopupMenu := Self.PopupMenu1;
+    end;
+  end;
 
 end;
 

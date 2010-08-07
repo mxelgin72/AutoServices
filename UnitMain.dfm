@@ -2,7 +2,7 @@ object FormMain: TFormMain
   Left = 0
   Top = 0
   Caption = #1055#1083#1072#1085#1080#1088#1086#1074#1072#1085#1080#1077' '#1079#1072#1085#1103#1090#1086#1089#1090#1080' '#1087#1086#1089#1090#1086#1074
-  ClientHeight = 502
+  ClientHeight = 522
   ClientWidth = 904
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -20,28 +20,26 @@ object FormMain: TFormMain
     Left = 0
     Top = 0
     Width = 904
-    Height = 502
+    Height = 522
     Align = alClient
     TabOrder = 0
-    ExplicitWidth = 800
-    ExplicitHeight = 572
+    ExplicitHeight = 502
     object Splitter1: TSplitter
       Left = 186
       Top = 1
-      Height = 460
+      Height = 480
       ExplicitLeft = 187
       ExplicitTop = 24
       ExplicitHeight = 505
     end
     object pnButtons: TPanel
       Left = 1
-      Top = 461
+      Top = 481
       Width = 902
       Height = 40
       Align = alBottom
       TabOrder = 0
-      ExplicitTop = 531
-      ExplicitWidth = 798
+      ExplicitTop = 461
       object btnAdd: TBitBtn
         Left = 198
         Top = 6
@@ -75,10 +73,10 @@ object FormMain: TFormMain
       Left = 1
       Top = 1
       Width = 185
-      Height = 460
+      Height = 480
       Align = alLeft
       TabOrder = 1
-      ExplicitHeight = 530
+      ExplicitHeight = 460
       object GroupBox1: TGroupBox
         Left = 7
         Top = 1
@@ -91,7 +89,7 @@ object FormMain: TFormMain
           Top = 20
           Width = 162
           Height = 153
-          Date = 40354.811260844910000000
+          Date = 40354.981220335650000000
           TabOrder = 0
           OnClick = MonthCalendar1Click
         end
@@ -149,11 +147,10 @@ object FormMain: TFormMain
       Left = 189
       Top = 1
       Width = 714
-      Height = 460
+      Height = 480
       Align = alClient
       TabOrder = 2
-      ExplicitWidth = 610
-      ExplicitHeight = 530
+      ExplicitHeight = 460
       object LabelDate: TLabel
         Left = 1
         Top = 1
@@ -174,13 +171,14 @@ object FormMain: TFormMain
         Left = 1
         Top = 17
         Width = 712
-        Height = 442
+        Height = 462
         Cursor = crDefault
         Align = alClient
         DefaultColWidth = 88
         DefaultRowHeight = 16
         ScrollBars = ssBoth
         TabOrder = 0
+        OnRightClickCell = SGRepRightClickCell
         ActiveCellFont.Charset = DEFAULT_CHARSET
         ActiveCellFont.Color = clWindowText
         ActiveCellFont.Height = -11
@@ -252,8 +250,7 @@ object FormMain: TFormMain
         SearchFooter.MatchCaseCaption = 'Match case'
         ShowDesignHelper = False
         Version = '5.0.2.0'
-        ExplicitWidth = 608
-        ExplicitHeight = 512
+        ExplicitHeight = 442
         RowHeights = (
           16
           16
@@ -354,11 +351,14 @@ object FormMain: TFormMain
     object N26: TMenuItem
       Caption = '-'
     end
-    object N110: TMenuItem
-      Caption = #1048#1085#1090#1077#1088#1074#1072#1083' 1 '#1095#1072#1089
+    object N151: TMenuItem
+      Caption = #1048#1085#1090#1077#1088#1074#1072#1083' 15 '#1084#1080#1085
     end
     object N301: TMenuItem
       Caption = #1048#1085#1090#1077#1088#1074#1072#1083' 30 '#1084#1080#1085
+    end
+    object N110: TMenuItem
+      Caption = #1048#1085#1090#1077#1088#1074#1072#1083' 60 '#1084#1080#1085
     end
   end
   object DataSource1: TDataSource
