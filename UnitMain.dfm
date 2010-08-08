@@ -23,7 +23,6 @@ object FormMain: TFormMain
     Height = 522
     Align = alClient
     TabOrder = 0
-    ExplicitHeight = 502
     object Splitter1: TSplitter
       Left = 186
       Top = 1
@@ -39,7 +38,6 @@ object FormMain: TFormMain
       Height = 40
       Align = alBottom
       TabOrder = 0
-      ExplicitTop = 461
       object btnAdd: TBitBtn
         Left = 198
         Top = 6
@@ -76,7 +74,6 @@ object FormMain: TFormMain
       Height = 480
       Align = alLeft
       TabOrder = 1
-      ExplicitHeight = 460
       object GroupBox1: TGroupBox
         Left = 7
         Top = 1
@@ -89,7 +86,7 @@ object FormMain: TFormMain
           Top = 20
           Width = 162
           Height = 153
-          Date = 40354.981220335650000000
+          Date = 40354.569451678240000000
           TabOrder = 0
           OnClick = MonthCalendar1Click
         end
@@ -150,7 +147,6 @@ object FormMain: TFormMain
       Height = 480
       Align = alClient
       TabOrder = 2
-      ExplicitHeight = 460
       object LabelDate: TLabel
         Left = 1
         Top = 1
@@ -250,7 +246,6 @@ object FormMain: TFormMain
         SearchFooter.MatchCaseCaption = 'Match case'
         ShowDesignHelper = False
         Version = '5.0.2.0'
-        ExplicitHeight = 442
         RowHeights = (
           16
           16

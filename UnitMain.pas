@@ -115,38 +115,51 @@ MonthCalendar1.Date := now;
 MonthCalendar1Click(self);
 
 //---------------
-sgrep.RowCount := 25;
-sgrep.ColCount := 8;
-
-sgrep.Cols[0].Text := 'Время';
-sgrep.Cols[1].Text := 'Подъемник 1';
-sgrep.Cols[2].Text := 'Подъемник 2';
-sgrep.Cols[3].Text := 'Подъемник 3';
-sgrep.Cols[4].Text := 'Мойка';
-sgrep.Cols[5].Text := 'Электрик';
-sgrep.Cols[6].Text := 'Сход-развал 1';
-sgrep.Cols[7].Text := 'Сход-развал 2';
-
-InitGrid(StrToTime('8:00'), StrToTime('19:30'), StrToTime('00:30'));
+  InitGrid(StrToTime('8:00'), StrToTime('19:30'), StrToTime('00:30'));
 
 
-sgRep.MergeCells(3,3,2,2);
-sgRep.Cells[3,3] := 'Объединенная ячейка';
+  sgRep.MergeCells(3,3,2,2);
+  sgRep.Cells[3,3] := 'Объединенная ячейка';
 end;
 
 procedure TFormMain.InitGrid(beginTime, endTime, interval: TDateTime);
 var
   i : integer;
+  defInterval: TDateTime;
+  rowCount, step: Integer;
 begin
-  SGRep.ClearRows(1,  SGRep.RowCount);
-  SGRep.RowCount := trunc((endTime - beginTime)/interval) + 2;
+  step := trunc(interval/StrToTime('00:15'));
+  defInterval := StrToTime('00:15');
+  rowCount := trunc((endTime - beginTime)/defInterval) + 1;
 
-  for i := 1 to SgRep.RowCount  do
+
+
+  SGRep.ClearCols(1,  SGRep.ColCount);
+  sgrep.ColCount := 8;
+  sgrep.Cols[0].Text := 'Время';
+  sgrep.Cols[1].Text := 'Подъемник 1';
+  sgrep.Cols[2].Text := 'Подъемник 2';
+  sgrep.Cols[3].Text := 'Подъемник 3';
+  sgrep.Cols[4].Text := 'Мойка';
+  sgrep.Cols[5].Text := 'Электрик';
+  sgrep.Cols[6].Text := 'Сход-развал 1';
+  sgrep.Cols[7].Text := 'Сход-развал 2';
+
+
+  SGRep.ClearRows(1,  SGRep.RowCount);
+  SGRep.RowCount := rowCount;
+
+  i := 1;
+  while i < rowCount  do
   begin
+
     SgRep.Rows[i].Text := //TimeToStr(beginTime);
     copy(TimeToStr(beginTime),1, length(TimeToStr(beginTime)) - 3);
 
+    sgRep.MergeCells(0,i,1,step);
+
     beginTime := beginTime + interval;
+    i := i + 1*step;
   end;
 end;
 
