@@ -3,8 +3,8 @@ object FormLogin: TFormLogin
   Top = 0
   BorderStyle = bsToolWindow
   Caption = #1042#1093#1086#1076' '#1074' '#1089#1080#1089#1090#1077#1084#1091
-  ClientHeight = 114
-  ClientWidth = 250
+  ClientHeight = 115
+  ClientWidth = 328
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -12,7 +12,7 @@ object FormLogin: TFormLogin
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
-  Position = poMainFormCenter
+  Position = poScreenCenter
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -78,5 +78,14 @@ object FormLogin: TFormLogin
     Height = 21
     TabOrder = 4
     Text = 'AutoServ'
+  end
+  object Button3: TButton
+    Left = 246
+    Top = 51
+    Width = 75
+    Height = 25
+    Caption = 'Button3'
+    TabOrder = 5
+    OnClick = Button3Click
   end
 end

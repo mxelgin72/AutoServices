@@ -4,9 +4,10 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls;
+  Dialogs, StdCtrls, UnitDM;
 
 type
+
   TFormLogin = class(TForm)
     eLogin: TEdit;
     ePass: TEdit;
@@ -16,11 +17,14 @@ type
     Button2: TButton;
     eBD: TEdit;
     Label3: TLabel;
+    Button3: TButton;
     procedure Button2Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
   private
     { Private declarations }
   public
+    function getParams: TParamsDB;
     { Public declarations }
   end;
 
@@ -35,7 +39,8 @@ const WorkStation = 'PRF'; // Сервак MSSQL
 
 procedure TFormLogin.Button1Click(Sender: TObject);
 begin
-
+  ModalResult := mrOk;
+{
 // Если коннект с базой есть то второй раз его не делаем
 if UnitMain.FormMain.ADOConnection1.Connected then
 begin
@@ -61,14 +66,28 @@ UnitMain.FormMain.nDisconnect.Enabled := true;
 UnitMain.FormMain.nConnect.Enabled := false;
 close;// Закрываем окно
 end;
-
-
-
+}
 end;
 
 procedure TFormLogin.Button2Click(Sender: TObject);
 begin
-close;
+  ModalResult := mrCancel;
+end;
+
+
+procedure TFormLogin.Button3Click(Sender: TObject);
+var
+  prm: TParamsDB;
+begin
+  DataModule1.connectParam(prm);
+end;
+
+function TFormLogin.getParams: TParamsDB;
+begin
+  Result.userName := Self.eLogin.Text;
+  Result.password := Self.ePass.Text;
+  Result.connectionName := Self.eBD.Text;
+  Result.connectionName := 'Provider=SQLOLEDB.1;Password=111;Persist Security Info=True;User ID=sa;Initial Catalog=AutoServ1;Data Source=EMX';
 end;
 
 end.

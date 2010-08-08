@@ -86,7 +86,7 @@ object FormMain: TFormMain
           Top = 20
           Width = 162
           Height = 153
-          Date = 40354.569451678240000000
+          Date = 40354.881440601850000000
           TabOrder = 0
           OnClick = MonthCalendar1Click
         end
@@ -137,6 +137,15 @@ object FormMain: TFormMain
             #1053#1077' '#1085#1072#1095#1072#1090#1072
             #1042' '#1088#1072#1073#1086#1090#1077
             #1047#1072#1074#1077#1088#1096#1077#1085#1072)
+        end
+        object Button1: TButton
+          Left = 58
+          Top = 113
+          Width = 75
+          Height = 25
+          Caption = 'Button1'
+          TabOrder = 1
+          OnClick = Button1Click
         end
       end
     end
@@ -364,13 +373,8 @@ object FormMain: TFormMain
     Left = 256
     Top = 240
   end
-  object ADOConnection1: TADOConnection
-    LoginPrompt = False
-    Left = 296
-    Top = 240
-  end
   object ADOQuery1: TADOQuery
-    Connection = ADOConnection1
+    Connection = DataModule1.ADOConnection1
     Parameters = <>
     SQL.Strings = (
       '')

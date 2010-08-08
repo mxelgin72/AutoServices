@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, Menus, StdCtrls, Grids, ComCtrls, Buttons, ExtCtrls, CategoryButtons,
-  DB, DBGrids, ADODB, BaseGrid, AdvGrid;
+  DB, DBGrids, ADODB, BaseGrid, AdvGrid, UnitDM;
 
 type
   TFormMain = class(TForm)
@@ -55,10 +55,10 @@ type
     LabelDate: TLabel;
     Splitter1: TSplitter;
     DataSource1: TDataSource;
-    ADOConnection1: TADOConnection;
     ADOQuery1: TADOQuery;
     SGRep: TAdvStringGrid;
     N151: TMenuItem;
+    Button1: TButton;
     procedure FormCreate(Sender: TObject);
     procedure btnAddClick(Sender: TObject);
     procedure btnChangeClick(Sender: TObject);
@@ -71,6 +71,7 @@ type
     procedure N151Click(Sender: TObject);
     procedure N301Click(Sender: TObject);
     procedure N110Click(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
     procedure InitGrid(beginTime, endTime, interval: TDateTime);
@@ -102,6 +103,13 @@ begin
  formlogin.Show;
 end;
 
+procedure TFormMain.Button1Click(Sender: TObject);
+begin
+  ADOQuery1.SQL.Text := 'select * from test' ;
+  ADOQuery1.Active := true;
+Showmessage(  IntToStr(ADOQuery1.RecordCount));
+end;
+
 procedure TFormMain.FormCreate(Sender: TObject);
 begin
 
@@ -126,11 +134,13 @@ procedure TFormMain.InitGrid(beginTime, endTime, interval: TDateTime);
 var
   i : integer;
   defInterval: TDateTime;
-  rowCount, step: Integer;
+  rowCount, step, defaultRowHeight: Integer;
 begin
   step := trunc(interval/StrToTime('00:15'));
   defInterval := StrToTime('00:15');
   rowCount := trunc((endTime - beginTime)/defInterval) + 1;
+
+  defaultRowHeight := trunc(16 / step);
 
 
 
@@ -152,8 +162,9 @@ begin
   i := 1;
   while i < rowCount  do
   begin
+//    SGRep.RowHeights[i] := defaultRowHeight;
 
-    SgRep.Rows[i].Text := //TimeToStr(beginTime);
+    SgRep.Rows[i].Text :=
     copy(TimeToStr(beginTime),1, length(TimeToStr(beginTime)) - 3);
 
     sgRep.MergeCells(0,i,1,step);
@@ -202,7 +213,7 @@ end;
 procedure TFormMain.nDisconnectClick(Sender: TObject);
 begin
 ADOQuery1.Close;
-ADOConnection1.Close;
+//ADOConnection1.Close;
 
 nDisconnect.Enabled := false;
 nConnect.Enabled := true;
